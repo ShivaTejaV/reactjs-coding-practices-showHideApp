@@ -16,19 +16,6 @@ class ShowHide extends Component {
   render() {
     const {btn1, btn2} = this.state
     // console.log(btn1, btn2)
-    let cls1
-    let cls2
-    if (btn1) {
-      cls1 = 'name'
-    } else {
-      cls1 = 'hide'
-    }
-
-    if (btn2) {
-      cls2 = 'name'
-    } else {
-      cls2 = 'hide'
-    }
 
     return (
       <div className="bg">
@@ -38,14 +25,14 @@ class ShowHide extends Component {
             <button className="button" type="button" onClick={this.hideShow1}>
               Show/Hide Firstname
             </button>
-            <h1 className={cls1}>Joe</h1>
+            {btn1 && <p className="name">Joe</p>}
           </div>
 
           <div className="container">
             <button className="button" type="button" onClick={this.hideShow2}>
               Show/Hide Lastname
             </button>
-            <h1 className={cls2}>Jonas</h1>
+            {btn2 && <p className="name">Jonas</p>}
           </div>
         </div>
       </div>
